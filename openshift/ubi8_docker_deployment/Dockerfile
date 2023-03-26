@@ -8,6 +8,8 @@ RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".instead
 RUN echo "git clone ${GIT_URL} /upload/src  -b ${GIT_BRANCH}"
 RUN git clone ${GIT_URL} /upload/src -b ${GIT_BRANCH}
 RUN ls /upload/src
+RUN echo "==========="
+RUN pwd /upload/src
 # contextDir: /nodesrvcbe
 COPY /upload/src /tmp/src
 # RUN chown -R 1001:0 /tmp/src
