@@ -5,10 +5,11 @@ USER 0
 ## RUN git config --global url."https://${git_personal_token}:@github.com/".insteadOf "https://github.com/"
 RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".insteadOf "https://github.com/"
 
-RUN echo "git clone ${GIT_URL} upload/src  -b ${GIT_BRANCH}"
-RUN git clone ${GIT_URL} upload/src -b ${GIT_BRANCH}
+RUN echo "git clone ${GIT_URL} /upload/src  -b ${GIT_BRANCH}"
+RUN git clone ${GIT_URL} /upload/src -b ${GIT_BRANCH}
+RUN ls /upload/src
 # contextDir: /nodesrvcbe
-COPY upload/src /tmp/src
+COPY /upload/src /tmp/src
 # RUN chown -R 1001:0 /tmp/src
 RUN /usr/bin/fix-permissions /tmp/src
 USER 1001
