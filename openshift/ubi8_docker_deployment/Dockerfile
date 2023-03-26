@@ -7,11 +7,11 @@ RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".instead
 
 RUN echo "git clone ${GIT_URL} /tmp/usrc  -b ${GIT_BRANCH}"
 RUN git clone ${GIT_URL} /tmp/usrc -b ${GIT_BRANCH}
-RUN ls tmp/usrc
+RUN ls /tmp/usrc
 RUN echo "==========="
-RUN pwd tmp/usrc
+RUN pwd /tmp/usrc
 # contextDir: /nodesrvcbe
-COPY tmp/usrc /tmp/src
+COPY /tmp/usrc /tmp/src
 # RUN chown -R 1001:0 /tmp/src
 RUN /usr/bin/fix-permissions /tmp/src
 USER 1001
