@@ -2,9 +2,9 @@ apiVersion: template.openshift.io/v1
 kind: Template
 apiVersion: v1
 metadata:
-  name: nodejs-s2i-srvc-template
+  name: nodejs-ubi8docker-srvc-template
   annotations:
-    openshift.io/display-name: "nodejs-s2i-srvc-template"
+    openshift.io/display-name: "nodejs-ubi8docker-srvc-template"
     description: >-
       The template for deployment Node.js service using S2I
       approach
@@ -66,9 +66,6 @@ objects:
         to:
           kind: ImageStreamTag
           name: "${APP_SERVICE_NAME}:latest"
-
-
-
   - apiVersion: apps.openshift.io/v1
     kind: DeploymentConfig
     metadata:

@@ -5,8 +5,8 @@ USER 0
 ## RUN git config --global url."https://${git_personal_token}:@github.com/".insteadOf "https://github.com/"
 RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".insteadOf "https://github.com/"
 RUN echo "git clone ${GIT_URL} /tmp/src -b ${GIT_BRANCH}"
-RUN git clone ${GIT_URL} /tmp/src -b ${GIT_BRANCH}
-
+RUN git clone ${GIT_URL}/nodesrvcbe /tmp/src -b ${GIT_BRANCH}
+# contextDir: /nodesrvcbe
 
 # RUN chown -R 1001:0 /tmp/src
 RUN /usr/bin/fix-permissions /tmp/src
