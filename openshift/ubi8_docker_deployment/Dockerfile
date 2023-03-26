@@ -5,13 +5,13 @@ USER 0
 ## RUN git config --global url."https://${git_personal_token}:@github.com/".insteadOf "https://github.com/"
 RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".insteadOf "https://github.com/"
 
-RUN echo "git clone ${GIT_URL} tupload/src  -b ${GIT_BRANCH}"
-RUN git clone ${GIT_URL} tupload/src -b ${GIT_BRANCH}
-RUN ls tupload/src
+RUN echo "git clone ${GIT_URL} /tmp/usrc  -b ${GIT_BRANCH}"
+RUN git clone ${GIT_URL} /tmp/usrc -b ${GIT_BRANCH}
+RUN ls tmp/usrc
 RUN echo "==========="
-RUN pwd tupload/src
+RUN pwd tmp/usrc
 # contextDir: /nodesrvcbe
-COPY tupload/src /tmp/src
+COPY tmp/usrc /tmp/src
 # RUN chown -R 1001:0 /tmp/src
 RUN /usr/bin/fix-permissions /tmp/src
 USER 1001
