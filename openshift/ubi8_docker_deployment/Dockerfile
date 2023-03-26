@@ -11,7 +11,7 @@ RUN ls /tmp/usrc
 RUN echo "==========="
 RUN pwd /tmp/usrc
 # contextDir: /nodesrvcbe
-COPY /tmp/usrc /tmp/src
+COPY /opt/app-root/src /tmp/src
 # RUN chown -R 1001:0 /tmp/src
 RUN /usr/bin/fix-permissions /tmp/src
 USER 1001
