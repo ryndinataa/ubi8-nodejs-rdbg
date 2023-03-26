@@ -36,37 +36,6 @@ objects:
         app.kubernetes.io/part-of: "${APP_NAME}"
     spec:
       source:
-        contextDir: /nodesrvcbe
-        git:
-          ref: ${GIT_BRANCH}
-          uri: ${GIT_URL}
-        sourceSecret:
-          name: psh-gihtub
-        type: Git
-      strategy:
-        sourceStrategy:
-          from:
-            kind: ImageStreamTag
-            name: ${FROM_IS_NAME}
-            namespace: openshift
-        type: Source
-      successfulBuildsHistoryLimit: 5
-      triggers:
-        - type: ConfigChange
-      runPolicy: Serial
-      output:
-        to:
-          kind: ImageStreamTag
-          name: "${APP_SERVICE_NAME}:latest"
-  - apiVersion: build.openshift.io/v1
-    kind: BuildConfig
-    metadata:
-      name: "${APP_SERVICE_NAME}"
-      labels:
-        app: "${APP_NAME}"
-        app.kubernetes.io/part-of: "${APP_NAME}"
-    spec:
-      source:
         contextDir: /
         git:
           ref: ${GIT_BRANCH}
@@ -92,7 +61,6 @@ objects:
               value: ${GIT_BRANCH}
             - name: GIT_URL
               value: ${GIT_URL}
-
           dockerfilePath: ${DOCKER_PTH}    # Look for Dockerfile in: gitUri/contextDir/dockerfilePath
       output:
         to:
