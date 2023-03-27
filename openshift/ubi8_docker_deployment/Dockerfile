@@ -5,13 +5,19 @@ USER 0
 ## RUN git config --global url."https://${git_personal_token}:@github.com/".insteadOf "https://github.com/"
 RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".insteadOf "https://github.com/"
 
-RUN echo "git clone ${GIT_URL} /tmp/usrc  -b ${GIT_BRANCH}"
-RUN git clone ${GIT_URL} /tmp/usrc -b ${GIT_BRANCH}
-RUN ls /tmp/usrc
+RUN echo "git clone ${GIT_URL} /usr/src  -b ${GIT_BRANCH}"
+RUN git clone ${GIT_URL} /usr/src -b ${GIT_BRANCH}
+RUN ls /usr/usrc
 RUN echo "==========="
-RUN pwd /tmp/usrc
+RUN pwd /usr/src
+RUN echo "mv  /usr/src/* /tmp/src/" > /opt/app-root/etc/xmove.sh
+RUN chmod 777 /opt/app-root/etc/xmove.sh
+
+RUN echo "---> Installing application source ..."
+RUN /opt/app-root/etc/xmove.sh 
+
 # contextDir: /nodesrvcbe
-COPY /opt/app-root/src /tmp/src
+#COPY /opt/app-root/src /tmp/src
 # RUN chown -R 1001:0 /tmp/src
 RUN /usr/bin/fix-permissions /tmp/src
 USER 1001
