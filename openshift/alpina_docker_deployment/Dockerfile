@@ -9,14 +9,13 @@ RUN git clone ${GIT_URL} /usr/appsrc -b ${GIT_BRANCH}
 RUN echo "mv /usr/appsrc/nodesrvcbe/* /app" > /etc/xmove.sh
 RUN chmod 777 /etc/xmove.sh
 
-RUN ls
 WORKDIR /app
 RUN echo "---> Installing application source ..."
 RUN /etc/xmove.sh 
-RUN pwd
-RUN ls
+RUN chmod 777 /app/apprun.sh
 RUN apk add g++ make py3-pip && \
   npm install && \
   mkdir logs
+
 CMD /app/apprun.sh
 
