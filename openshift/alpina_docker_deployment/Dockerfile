@@ -18,5 +18,5 @@ RUN ls
 RUN apk add g++ make py3-pip && \
   npm install && \
   mkdir logs
-CMD apprun.sh
+CMD /app/apprun.sh
 
