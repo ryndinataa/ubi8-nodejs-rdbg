@@ -10,7 +10,7 @@ RUN echo "mv /usr/appsrc/nodesrvcbe/* /app" > /etc/xmove.sh
 RUN chmod 777 /etc/xmove.sh
 
 RUN ls
-#WORKDIR /app
+WORKDIR /app
 RUN echo "---> Installing application source ..."
 RUN /etc/xmove.sh 
 RUN pwd
