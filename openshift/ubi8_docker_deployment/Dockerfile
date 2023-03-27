@@ -7,7 +7,7 @@ RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".instead
 
 RUN echo "git clone ${GIT_URL} /usr/src  -b ${GIT_BRANCH}"
 RUN git clone ${GIT_URL} /usr/src -b ${GIT_BRANCH}
-RUN ls /usr/usrc
+RUN ls /usr/src
 RUN echo "==========="
 RUN pwd /usr/src
 RUN echo "mv  /usr/src/* /tmp/src/" > /opt/app-root/etc/xmove.sh
