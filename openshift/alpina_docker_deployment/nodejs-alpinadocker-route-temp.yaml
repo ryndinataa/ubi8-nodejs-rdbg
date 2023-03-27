@@ -35,16 +35,14 @@ objects:
 parameters:
   - name: NAMESPACE
     displayName: Namespace 
-    description: The Namespace where Redis must be deployed. 
+    description: The Namespace where route must be deployed. 
     required: true   
   - name: APP_SERVICE_NAME
     displayName: APP Service Name 
     description: The name of the OpenShift Service exposed for the APP.
-    value: "pvx-iit-srvc"
   - name: APP_NAME
     displayName: Application Name 
     description: The name of the OpenShift Application  for Groupe of Servoces.
-    value: "pvx-iit-srvc"
     required: true 
   - name: ROUTENAME
     displayName: ROUTE name 
