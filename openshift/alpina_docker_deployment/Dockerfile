@@ -18,6 +18,5 @@ RUN ls
 RUN apk add g++ make py3-pip && \
   npm install && \
   mkdir logs
-#COPY ./robot-ACC-OPEN/ .
-CMD [ "apprun.sh" ]
+CMD apprun.sh
 
