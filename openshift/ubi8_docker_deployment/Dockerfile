@@ -5,13 +5,13 @@ USER 0
 ## RUN git config --global url."https://${git_personal_token}:@github.com/".insteadOf "https://github.com/"
 RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".insteadOf "https://github.com/"
 
-RUN echo "git clone ${GIT_URL} /usr/src  -b ${GIT_BRANCH}"
-RUN git clone ${GIT_URL} /usr/src -b ${GIT_BRANCH}
-RUN ls /usr/src
+RUN echo "git clone ${GIT_URL} /usr/appsrc  -b ${GIT_BRANCH}"
+RUN git clone ${GIT_URL} /usr/appsrc -b ${GIT_BRANCH}
+RUN ls /usr/appsrc
 RUN echo "==========="
-RUN pwd /usr/src
-RUN echo "mv  /usr/src/* /tmp/src/" > /opt/app-root/etc/xmove.sh
-RUN chmod 777 /opt/app-root/etc/xmove.sh
+#RUN pwd /usr/src
+RUN echo "mv  /usr/appsrc/* /tmp/src/" > /opt/app-root/etc/xmove.sh
+#RUN chmod 777 /opt/app-root/etc/xmove.sh
 
 RUN echo "---> Installing application source ..."
 RUN /opt/app-root/etc/xmove.sh 
