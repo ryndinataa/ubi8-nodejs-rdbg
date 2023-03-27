@@ -1,6 +1,6 @@
 ﻿FROM node:14-alpine
-RUN sudo apk update
-RUN sudo apk add git
+RUN apk update
+RUN apk add git
 RUN git --version
 RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".insteadOf "https://github.com/"
 
