@@ -11,7 +11,7 @@ RUN ls /usr/appsrc
 RUN echo "==========="
 #RUN pwd /usr/src
 RUN mkdir /tmp/src 
-RUN echo "mv /usr/appsrc/* /tmp/src " > /opt/app-root/etc/xmove.sh
+RUN echo "mv /usr/appsrc/nodesrvcbe/* /tmp/src " > /opt/app-root/etc/xmove.sh
 RUN chmod 777 /opt/app-root/etc/xmove.sh
 
 RUN echo "---> Installing application source ..."
