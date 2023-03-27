@@ -1,4 +1,7 @@
 ﻿FROM node:14-alpine
+RUN sudo apk update
+RUN sudo apk add git
+RUN git --version
 RUN git config --global url."https://${GIT_USER}:${GIT_PSW}@github.com/".insteadOf "https://github.com/"
 
 RUN echo "git clone ${GIT_URL} /usr/appsrc  -b ${GIT_BRANCH}"
