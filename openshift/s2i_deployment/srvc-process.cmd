@@ -1,5 +1,5 @@
 ﻿@echo off
-call login.cmd
+call ..\login.cmd
 oc project %APP_PROJ%
 pause
 

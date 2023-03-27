@@ -2,9 +2,9 @@ apiVersion: template.openshift.io/v1
 kind: Template
 apiVersion: v1
 metadata:
-  name: nodejs-ubi8docker-srvc-template
+  name: nodejs-alpinadocker-srvc-template
   annotations:
-    openshift.io/display-name: "nodejs-ubi8docker-srvc-template"
+    openshift.io/display-name: "nodejs-alpinadocker-srvc-template"
     description: >-
       The template for deployment Node.js service using S2I
       approach

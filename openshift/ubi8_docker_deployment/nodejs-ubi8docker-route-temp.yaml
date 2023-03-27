@@ -2,11 +2,11 @@ apiVersion: template.openshift.io/v1
 kind: Template
 apiVersion: v1
 metadata:
-  name: nodejs-s2i-rote-template
+  name: nodejs-ubi8docker-route-template
   annotations:
-    openshift.io/display-name: "nodejs-s2i-route-template"
+    openshift.io/display-name: "nodejs-ubi8docker-route-template"
     description: >-
-      The template for deployment Node.js service using S2I
+      The template for deployment Node.js service using ubi8docker
       approach
 
     tags: "node.js"
