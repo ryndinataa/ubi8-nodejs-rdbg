@@ -10,7 +10,7 @@ RUN git clone ${GIT_URL} /usr/appsrc -b ${GIT_BRANCH}
 RUN ls /usr/appsrc
 RUN echo "==========="
 #RUN pwd /usr/src
-RUN echo "mv  /usr/appsrc/* /tmp/src/" > /opt/app-root/etc/xmove.sh
+RUN echo "mv  /usr/appsrc/* /tmp/src" > /opt/app-root/etc/xmove.sh
 RUN chmod 777 /opt/app-root/etc/xmove.sh
 
 RUN echo "---> Installing application source ..."
